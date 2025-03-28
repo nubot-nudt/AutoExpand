@@ -1,4 +1,4 @@
 # AutoExpand
-AutoExpand: Autonomous Task Generation for Indoor Environmental Expansion via Multimodal Large Model-Behavior Tree Fusion
+Autonomous Subtask Generation for Indoor Search and Rescue Mission via Large-Language-Model and Behavior-Tree Integration
 
 **Note**:​ The source code will be open-sourced upon paper acceptance.
