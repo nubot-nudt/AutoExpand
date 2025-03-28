@@ -1,0 +1,662 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/ThreadMetalPlate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/GlossyPaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/obstacles/protos/OilBarrel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/robotis/darwin-op/protos/Darwin-op.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/sony/aibo/protos/AiboErs7.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/pipes/protos/LJoint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/tools/protos/Wrench.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/tools/protos/Hammer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/CardboardBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/tools/protos/PaintBucket.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/tools/protos/Screwdriver.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/pallet/protos/WoodenPalletStack.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/valves/protos/LeverValve.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/valves/protos/LargeValve.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/pipes/protos/PipeSection.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/valves/protos/SmallValve.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/hospital/protos/EmergencyExitSign.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/stairs/protos/StraightStairsRail.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/stairs/protos/StraightStairs.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/velodyne/protos/VelodyneVLP-16.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/solids/protos/SolidRoundedBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/tools/protos/EmergencyButton.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/clearpath/pr2/protos/Pr2.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.33784153027118646 -0.0656722355397773 -0.9389090786137021 3.502635066179742
+  position 14.536894766409254 -6.11776492615876 17.61133637858019
+}
+TexturedBackground {
+  texture "empty_office"
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 10.8
+  location -4 6 5
+  castShadows TRUE
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 9.6
+  location 5 6 5
+}
+Floor {
+  translation 0 -4.3 0
+  name "floor(1)"
+  size 20 16.4
+  tileSize 1 1
+  appearance ThreadMetalPlate {
+  }
+}
+Robot {
+  translation 2.10587 3.9104 2.33909
+  rotation 0 0 -1 -0.261795307179586
+  children [
+    VelodyneVLP-16 {
+      translation -8.68299 0.453164 -1.94917
+      rotation 0 0 1 0.523602
+    }
+    Pr2 {
+      translation -8.50637 0.607132 -2.34
+      rotation 0 0 1 -2.3561953071795863
+      controller "<none>"
+    }
+    RangeFinder {
+      translation -0.862314 -4.6576 -1.14
+      rotation 0 0 1 -0.5235996938995747
+      name "depth_camera"
+      fieldOfView 1.6
+      width 640
+      height 480
+      maxRange 13
+    }
+    SolidRoundedBox {
+      translation -0.04 0 0
+      size 0.165 0.01 0.085
+      borderRadius 0.005
+      appearance PBRAppearance {
+        baseColor 0.926 0.912 0.698
+        metalness 0
+      }
+    }
+    SolidRoundedBox {
+      name "rounded box(1)"
+      size 0.08 0.011 0.08
+      borderRadius 0.005
+      appearance PBRAppearance {
+        baseColor 0.768 0.627 0
+        metalness 0
+      }
+    }
+    EmergencyButton {
+      translation 0 -0.004 0
+      rotation 0 0 1 -1.5707953071795862
+      includePositionSensor TRUE
+    }
+    SolidRoundedBox {
+      translation -0.08 0 0
+      name "rounded box(2)"
+      size 0.08 0.011 0.08
+      borderRadius 0.005
+      appearance PBRAppearance {
+        baseColor 0.811 0.792 0.494
+        metalness 0
+      }
+    }
+    LED {
+      translation -0.08 0 0
+      rotation 1 0 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.643 0 0
+            roughness 1
+            metalness 0
+            emissiveIntensity 100
+          }
+          geometry Cylinder {
+            bottom FALSE
+            height 0.013
+            radius 0.024
+            subdivision 64
+          }
+        }
+      ]
+    }
+  ]
+  name "mbot_car"
+  controller "<extern>"
+}
+Door {
+  hidden translation_5 0.001000001893662894 5.940122838055117e-10 0
+  translation 10.04 -4 3.27
+  rotation 0 0 1 3.141592
+  name "door(1)"
+  position -5.695226945691035e-10
+  doorAppearance GlossyPaint {
+    baseColor 0.16 0.16 0.16
+  }
+  frameAppearance GlossyPaint {
+    baseColor 0.35 0.3503166247043564 0.35
+  }
+}
+OilBarrel {
+  translation 9.337425 2.8961435 0.44
+  rotation 0 0 1 2.87325
+  name "oil barrel(1)"
+}
+OilBarrel {
+  translation 8.4218847 2.1373536 0.44
+  rotation 0 0 1 2.87325
+  name "oil barrel(2)"
+}
+OilBarrel {
+  translation 8.2750954 3.0222101 0.44
+  rotation 0 0 1 -0.340335
+}
+Door {
+  hidden translation_5 0.0010000018936626998 5.940122838055117e-10 0
+  translation -10.05 0 0.02
+  position -5.695226280094958e-10
+  doorAppearance GlossyPaint {
+    baseColor 0.16 0.16 0.16
+  }
+  frameAppearance GlossyPaint {
+    baseColor 0.35 0.3503166247043564 0.35
+  }
+}
+Floor {
+  translation 0 -4.22 7
+  rotation 1 0 0 3.141592
+  size 20 16.4
+  tileSize 1 1
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/asphalt.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
+}
+Darwin-op {
+  hidden position_0_0 2.5063615679279434e-08
+  hidden position_0_1 -0.020000899273050692
+  hidden position_0_2 -0.009999506830077807
+  hidden position_0_3 0.7199999062707987
+  hidden position_0_4 -0.8399994338648153
+  hidden rotation_10 0.5774169262404001 0.5773169377785916 0.577316937777715 2.0944000144696497
+  hidden position_10_0 0.1900000145421596
+  hidden rotation_11 1 0 0 0.5953999854578389
+  hidden rotation_15 0.5696583636799731 0.5811580459305097 0.5811580459218357 2.1060005226196923
+  hidden position_15_0 -0.010000973018661756
+  hidden rotation_16 0 0 1 0.010000973018659707
+  hidden position_16_0 1.1500005239049986
+  hidden rotation_17 -1 0 0 1.1500005239049989
+  hidden position_17_0 -2.250000618385772
+  hidden rotation_18 1 0 0 2.250000618385772
+  hidden position_18_0 -1.229999568879653
+  hidden rotation_19 -1 0 0 1.2299995688796528
+  hidden position_19_0 -0.020000034483994327
+  hidden rotation_20 0 0 -1 0.020000034483986216
+  hidden rotation_21 0.5734774719662398 0.5792769584360877 0.5792769584337407 2.1001997143180042
+  hidden position_21_0 0.020000475711710743
+  hidden rotation_22 0 0 -1 0.02000047571170152
+  hidden position_22_0 -1.1499997228454535
+  hidden rotation_23 -1 0 0 1.1499997228454533
+  hidden position_23_0 2.2500000984181163
+  hidden rotation_24 1 0 0 2.2500000984181163
+  hidden position_24_0 1.220000011301019
+  hidden rotation_25 -0.9999999999999999 0 0 1.220000011301019
+  hidden position_25_0 0.04999996535582092
+  hidden rotation_26 0 0 1 0.049999965355819104
+  hidden rotation_27 0.6733928778264633 0.6733928778279907 0.3050968111651297 2.5493999368834226
+  hidden position_27_0 0.36000015536027535
+  hidden rotation_28 0 0 0.9999999999999999 0.42539984463972474
+  hidden position_28_0 -0.5199999862255317
+  hidden rotation_29 -1 0 0 2.090799986225532
+  hidden rotation_30 0.6825799168691802 0.6825799168524368 0.26109253952685724 2.630699613567481
+  hidden position_30_0 -0.32999970303101744
+  hidden rotation_31 0 0 -1 0.45540029696898027
+  hidden position_31_0 0.5099999842544263
+  hidden rotation_32 -1 0 0 2.080799984254426
+  translation -0.18905057765238642 -4.895951727493143 0.8253828845406431
+  rotation 0.5944172200671575 -0.4522491631416002 0.6649352321281786 2.236633870678676
+  controller "<generic>"
+}
+AiboErs7 {
+  hidden position_0_0 -0.5235996431199579
+  hidden position_0_1 3.113787010461358e-09
+  hidden position_0_2 1.6367873751431284e-07
+  hidden position_0_3 -1.619762204884428e-07
+  hidden position_0_4 2.7152624972684744e-07
+  hidden position_0_5 3.7530017562558776e-07
+  hidden rotation_2 0.4472162341939968 -0.4472102341914104 -0.7745970864312648 1.8234851596003874
+  hidden position_2_0 6.414875477704164e-08
+  hidden rotation_3 0 1 0 6.664001874625056e-08
+  hidden position_3_0 0.5235998824992444
+  hidden rotation_4 0.9999999999999999 0 0 0.5235998824992443
+  hidden position_4_0 1.2882032393712889e-09
+  hidden position_4_1 -1.260262116886679e-09
+  hidden position_12_0 -1.8513270916287183e-09
+  hidden rotation_14 0 -1 0 1.632340423778195e-07
+  hidden position_14_0 -1.0300071284774504e-07
+  hidden rotation_15 1 0 0 1.032382731180714e-07
+  hidden position_15_0 0.5236189539879631
+  hidden rotation_16 0.6546562098458448 -0.6546542098453644 -0.37795914123356616 2.4188819698780266
+  hidden rotation_18 0 -0.9999999999999999 0 1.632340423778195e-07
+  hidden position_18_0 -1.0300114450245701e-07
+  hidden rotation_19 1 0 0 1.032382731180714e-07
+  hidden position_19_0 0.5235980467380101
+  hidden rotation_20 0.44721690913451756 -0.44720990913583736 -0.7745968844211062 1.823485979098298
+  hidden rotation_22 0 -1 0 2.715120786173435e-07
+  hidden position_22_0 1.1222229578394048e-07
+  hidden rotation_23 1 0 0 1.1151007970493858e-07
+  hidden position_23_0 0.5236529685057617
+  hidden rotation_24 0.6546599993879499 -0.6546579993880535 -0.3779460133915964 2.4189039793820446
+  hidden rotation_26 0 1 0 3.7579298653955785e-07
+  hidden position_26_0 -1.2797184822943564e-07
+  hidden rotation_27 -1 0 0 1.264405455326821e-07
+  hidden position_27_0 0.5235978854532237
+  hidden rotation_28 0.44721695910692644 -0.44720995910781824 -0.7745968267182207 1.823486051226457
+  translation 1.1471135380963249 -4.9199828651916 0.8224935230119442
+  rotation -0.25715079599702245 0.6976205505211336 -0.668729418829984 2.6521668035876083
+  controller "<generic>"
+}
+LJoint {
+  translation -7.571 3.19 0.712
+  rotation 0 0 1 -1.5708
+  name "L joint pipe(1)"
+}
+LJoint {
+  translation -7.571 3.277 2.422
+  rotation -0.577350278331609 0.577350264618634 0.577350264618634 2.094395086923155
+}
+Wrench {
+  translation -0.35779018586349165 -4.347916345909266 0.7387765329974227
+  rotation -0.0002346850011958563 -0.00017516623622574465 -0.9999999571198691 1.5707953797843948
+  name "wrench(1)"
+}
+Wrench {
+  translation 0.8606644852308235 -4.696695620872948 0.7387765329974788
+  rotation 0.00021374064442605917 3.0942070105680345e-05 0.9999999766787623 -2.5656353534785685
+}
+Hammer {
+  translation -0.8077839094774952 -4.680486955733237 0.7524932054344096
+  rotation 0.00500483437020544 -0.0032953885562279047 0.9999820458624197 -2.094390171383983
+  name "hammer(1)"
+}
+Hammer {
+  translation 1.5252412122223313 -4.888395413166801 0.7524932054233588
+  rotation 0.0004052447562219678 -0.00560240670205547 0.9999842242834794 2.356218369639586
+}
+WoodenPallet {
+  translation -3.05 -12.1 0.52
+  rotation 0.44721372362178063 0.44721372362178063 0.7745965212991105 -1.82348
+}
+Table {
+  translation -0.23882837 -4.8402928 0
+  size 4.5 1.5 0.74
+}
+CardboardBox {
+  translation 2.2324987 -11.807743 0.31
+  rotation 0 0 1 -1.5707963267948966
+}
+PaintBucket {
+  hidden position_0_0 -2.0816715596530115
+  hidden linearVelocity_0 8.617319044888476e-05 0.00010127274546694589 0.0005065870329300994
+  hidden angularVelocity_0 -0.0027829421995845273 0.0023678695675135105 -3.947029984653523e-09
+  hidden rotation_1 0 -0.9999999999999999 0 2.0816715596530115
+  hidden position_1_0 -3.058144401085629e-05
+  hidden linearVelocity_1 0.0014346459759115161 0.002308748299111087 0.03909852972442912
+  hidden angularVelocity_1 -0.43381564416823715 0.25122052985838894 0.0002871057724822939
+  hidden rotation_2 0 -1 0 3.0581437873838483e-05
+  hidden linearVelocity_2 0.0021539431418015438 0.0035620083634013175 0.06393546662382901
+  hidden angularVelocity_2 -0.43401969496716364 0.2513383008441104 0.00028717860956619664
+  translation -0.7214976061096052 -5.177829317704966 0.7384142772763622
+  rotation 0.004255007645287111 -0.006073320385745219 0.9999725044667133 1.0472248640016149
+}
+Screwdriver {
+  hidden linearVelocity_0 -0.010692076202089744 -0.006161700133457812 -1.3981613611590655e-06
+  hidden angularVelocity_0 0.4987975564080307 -0.8655377208473257 0.0012549444325179143
+  translation -0.07084828507666158 -5.200730303432547 0.7518492422962065
+  rotation 0.00813906427215342 0.016452864328584182 0.9998315152505242 2.093735488934605
+}
+WoodenPalletStack {
+  translation -6.8424942 -11.754332 0
+  name "wooden pallet stack(1)"
+  palletNumber 6
+}
+WoodenPalletStack {
+  translation -5.2560137 -11.74814 0
+  palletNumber 20
+}
+WoodenBox {
+  translation 0.070787217 -11.12746 0.3
+  rotation -0.935113119114731 0.250562820924732 0.250562820924732 4.645351474266668
+  name "wooden box(1)"
+}
+WoodenBox {
+  translation 0.14546116 -11.909219 0.3
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(2)"
+}
+WoodenBox {
+  translation -1.1321262 -11.1489 0.3
+  rotation 0.862856210520177 0.357406743058074 0.357406743058073 1.71777151624413
+  name "wooden box(3)"
+}
+WoodenBox {
+  translation 1.5463886 -11.768592 0.3
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(4)"
+}
+WoodenBox {
+  translation -0.49883855 -11.765703 0.3
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(5)"
+}
+WoodenBox {
+  translation 0.95220994 -10.946614 0.3
+  rotation -0.677661491465059 0.519987933987584 0.519987933987584 4.332744312017075
+  name "wooden box(6)"
+}
+WoodenBox {
+  translation 0.91693757 -11.921006 0.3
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(7)"
+}
+WoodenBox {
+  translation 0.74212598 -12.012516 0.9
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(8)"
+}
+WoodenBox {
+  translation -9.3773 0.3435 0.42
+  rotation 1 0 0 1.5707963267948966
+  name "wooden box(9)"
+}
+WoodenBox {
+  translation -0.48872581 -11.691652 0.93
+  rotation 1 0 0 1.5707963267948966
+}
+LeverValve {
+  hidden position_0_0 -1.6225204092329728e-07
+  hidden translation_1 0 3.245040818465924e-09 -3.0878077872387166e-16
+  hidden rotation_1 -0.9999999999999999 0 0 1.632340423778195e-07
+  translation -7.5791585 3 0.692
+  rotation 0 0 1 -1.5708
+}
+LargeValve {
+  hidden position_0_0 -15.707963264453959
+  hidden translation_1 0 3.7734156332902553e-10 0
+  translation -5.7149744 2.9726835 0.706
+  rotation 0 0 1 -1.5708
+}
+PipeSection {
+  translation -7.5740452 3 0.18
+  name "pipe section(1)"
+  height 1.2
+}
+PipeSection {
+  translation -5.2940471 3 0.7
+  rotation 0 1 0 1.5708
+  name "pipe section(2)"
+  height 0.9
+  radius 0.02
+}
+PipeSection {
+  translation -7.5720026 3.234 1.56
+  name "pipe section(3)"
+  height 1.6
+}
+PipeSection {
+  translation -4.8579962 3 0.35
+  name "pipe section(4)"
+  height 0.7
+  radius 0.02
+}
+PipeSection {
+  translation -6.6249962 3 0.70600102
+  name "pipe section(5)"
+  height 1.7
+}
+PipeSection {
+  translation -7.572 3.74 2.4659975
+  rotation 1 0 0 -1.5708
+  name "pipe section(6)"
+  height 0.8
+}
+PipeSection {
+  translation -5.714996 3.37 0.65600436
+  rotation 1 0 0 1.5708
+  height 0.8
+}
+SmallValve {
+  hidden position_0_0 -15.706000064262486
+  hidden translation_1 0.006000000000000022 -1.3109547527395682e-09 -0.020400000655477347
+  hidden rotation_1 1 0 0 3.141629335738912
+  hidden linearVelocity_1 -3.2256533755980916e-10 5.5677988285347095e-15 -3.2999424759084983e-10
+  hidden angularVelocity_1 5.126224752385463e-13 3.162347994306117e-08 -2.2770240694519382e-15
+  translation -4.8638332 3 0.707
+  rotation 0 0 1 -1.5708
+}
+Wall {
+  translation 0 3.82 0
+  name "wall(1)"
+  size 20 0.2 7
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 5 1.75
+    }
+  }
+}
+Cabinet {
+  translation -0.46 3.84 0
+  rotation 0 0 1 -1.5707963267948966
+  name "cabinet(1)"
+  columnsWidths [
+    1.3, 0.17, 0.17
+  ]
+  layout [
+    "Shelf (1, 5, 3, 0)"
+    "Shelf (1, 4, 3, 0)"
+    "Shelf (1, 3, 3, 0)"
+    "Shelf (1, 2, 3, 0)"
+  ]
+}
+Cabinet {
+  hidden position_6_0 7.288149241464162e-13
+  hidden position_10_0 -7.295571049927266e-13
+  translation 1.49 3.84 0
+  rotation 0 0 1 -1.5707963267948966
+  columnsWidths [
+    1, 1
+  ]
+  layout [
+    "RightSidedDoor (1, 1, 1, 5, 1.5)"
+    "LeftSidedDoor (2, 1, 1, 5, 1.5)"
+  ]
+}
+Wall {
+  translation 0 -12.5 0
+  name "wall(2)"
+  size 20 0.2 7
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 5 1.75
+    }
+  }
+}
+Wall {
+  translation -10 -4.3 0
+  rotation 0 0 1 1.5708
+  name "wall(3)"
+  size 16.5 0.2 7
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 4.125 1.725
+    }
+  }
+}
+Wall {
+  translation 10 -4.3 0
+  rotation 0 0 1 -1.5708
+  size 16.5 0.2 7
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 4.125 1.725
+    }
+  }
+}
+EmergencyExitSign {
+  translation 9.82 -4.02 5.45
+  rotation 0.5773509358560258 -0.577349935856137 -0.577349935856137 2.09439
+}
+EmergencyExitSign {
+  translation -9.83 -0.01 2.3
+  rotation 0.5773489358550934 0.5773519358547601 0.5773499358549823 2.0944
+  name "emergency exit sign(1)"
+}
+Solid {
+  translation -9.87 -6.36 4.13
+  rotation 0.7071067811865476 0 0.7071067811865476 3.141592
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/ladybug.png"
+          ]
+          filtering 5
+        }
+        transparency 0.6
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          rotation 1.5708
+        }
+      }
+      geometry Plane {
+        size 5 5
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation 9.25 -3.95 3.21
+  rotation 1 0 0 1.5707963267948966
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/default/worlds/textures/steel_floor.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 2 2
+        }
+      }
+      geometry Box {
+        size 1.5 0.12 2.6
+      }
+    }
+  ]
+}
+StraightStairsRail {
+  translation 8.52 -2.73 3.27
+  rotation 0 0 1 -1.5708
+  name "straight stairs rail(1)"
+  run 2.5
+  rise 0
+  newelHeight 0.89
+  balusterHeight 0.9
+  nBalusters 9
+  appearance PBRAppearance {
+    baseColor 0.8 0.8 0.8
+    roughness 0.5
+    metalness 0
+    textureTransform TextureTransform {
+      rotation 1.5708
+    }
+  }
+}
+StraightStairsRail {
+  translation 8.57 -5.23 3.27
+  run 1.3
+  rise 0
+  newelHeight 0.89
+  balusterHeight 0.9
+  nBalusters 5
+  appearance PBRAppearance {
+    baseColor 0.8 0.8 0.8
+    roughness 0.5
+    metalness 0
+    textureTransform TextureTransform {
+      rotation 1.5708
+    }
+  }
+}
+StraightStairs {
+  translation 9.201 0.17 0
+  rotation 0 0 1 -1.5708
+  stepSize 0.3 1.34 0.01
+  stepRise 0.297
+  nSteps 10
+  stepAppearance PBRAppearance {
+    baseColor 0.8 0.8 0.8
+    roughness 0.5
+    metalness 0
+    textureTransform TextureTransform {
+      rotation 1.5708
+      scale 3 1
+    }
+  }
+  stringerAppearance PBRAppearance {
+    baseColor 0.8 0.8 0.8
+    roughness 0.5
+    metalness 0
+    textureTransform TextureTransform {
+      rotation 1.5708
+      scale 3 3
+    }
+  }
+  leftRail []
+  rightRail [
+    StraightStairsRail {
+      run 3
+      rise 2.97
+      newelHeight 0.862
+      balusterHeight 0.83
+      nBalusters 12
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          rotation 1.5708
+        }
+      }
+    }
+  ]
+}
